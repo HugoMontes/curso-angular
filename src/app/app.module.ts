@@ -3,14 +3,17 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-// Importar el componente
+// Importar el componente FrutaComponent
 import { FrutaComponent } from './fruta/fruta.component';
+// Importar el componente  EmpleadoComponent
+import { EmpleadoComponent } from './empleado/empleado.component';
 // Crear un  modulo
 @NgModule({
-  // Declarar los componentes
   declarations: [
     AppComponent,
-    FrutaComponent
+    FrutaComponent,
+    // Declarar el componente EmpleadoComponent
+    EmpleadoComponent
   ],
   // Cargar modulos del framework y otros
   imports: [
