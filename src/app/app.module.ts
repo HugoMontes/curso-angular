@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { FrutaComponent } from './fruta/fruta.component';
 // Importar el componente  EmpleadoComponent
 import { EmpleadoComponent } from './empleado/empleado.component';
-// Importar el componente  VariableComponent
-import { VariableComponent } from './variable/variable.component';
+// Importar el componente  PersonaComponent
+import { PersonaComponent } from './persona/persona.component';
 // Crear un  modulo
 @NgModule({
   declarations: [
@@ -17,8 +17,8 @@ import { VariableComponent } from './variable/variable.component';
     FrutaComponent,
     // Declarar el componente EmpleadoComponent
     EmpleadoComponent,
-    // Declarar el componente VariableComponent
-    VariableComponent,
+    // Declarar el componente PersonaComponent
+    PersonaComponent,
   ],
   // Cargar modulos del framework y otros
   imports: [

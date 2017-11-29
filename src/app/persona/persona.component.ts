@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 @Component({
-  selector: 'variable-tag',
-  templateUrl: './variable.component.html',
+  selector: 'persona-tag',
+  templateUrl: './persona.component.html',
 })
-export class VariableComponent {
+export class PersonaComponent {
   // Declarar las propiedades/atributos de la clase
-  public titulo = 'Componente de Variable';
+  public titulo = 'Componente de Persona';
   // Declarar un atributo de tipo string
   public nombre:string = 'Juan Perez';
   // Muestra error si no es del tipo correcto
