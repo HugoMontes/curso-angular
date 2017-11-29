@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 // Crear la clase FrutaComponent
 export class FrutaComponent {
-  // Especificar las propiedades
+  // Declarar las propiedades/atributos del componente
   public nombre_componente = 'Componente de fruta';
   public lista_frutas = 'Naranja, Manzana, Pera y Sandia';
 }

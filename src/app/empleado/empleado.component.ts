@@ -9,6 +9,6 @@ import { Component } from '@angular/core';
 })
 // Crear la clase EmpleadoComponent
 export class EmpleadoComponent {
-  // Especificar las propiedades del componente
+  // Definir la propiedad titulo como publica
   public titulo = 'Componente de Empleado';
 }

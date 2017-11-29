@@ -21,6 +21,6 @@ import { Component } from '@angular/core';
 // Crear la clase AppComponent
 // export: Permite hacer uso de la clase en otro archivo
 export class AppComponent {
-  // Cambiar el titulo por Hola Mundo
-  title = 'Hola Mundo';
+  // Cambiar el valor de la propiedad/atributo del titulo
+  title = 'Componente Principal';
 }
