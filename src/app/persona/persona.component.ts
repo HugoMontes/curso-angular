@@ -45,7 +45,7 @@ export class PersonaComponent {
   // Ej: Llamar servicios, ejecutar funciones ajax
   ngOnInit(){
     // Llamar a una funcion
-    this.holaMundo(this.nombre);
+    this.holaMundo();
     // Llamar a una funcion con parametros
     this.hola('Ariel');
     // Llamar a una funcion que cambia valor de propiedad
