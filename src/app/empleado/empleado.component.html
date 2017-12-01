@@ -1,15 +1,32 @@
 <h2 style="color:blue">{{ titulo }}</h2>
-<h3>Empleado estrella</h3>
-<ul>
-  <li>Nombre: {{ empleado.nombre }}</li>
-  <li>Edad: {{ empleado.edad }}</li>
-  <li>Cargo: {{ empleado.cargo }}</li>
-  <li>Contratado: {{ empleado.contratado }}</li>
-</ul>
-<h3>Empleado recomendado</h3>
-<ul>
-  <li>Nombre: {{ trabajadores[2].nombre }}</li>
-  <li>Edad: {{ trabajadores[2].edad }}</li>
-  <li>Cargo: {{ trabajadores[2].cargo }}</li>
-  <li>Contratado: {{ trabajadores[2].contratado }}</li>
-</ul>
+<!-- Datos empleado estrella -->
+<div *ngIf="show_estrella">
+  <!-- Adicionar un boton que ejecuta una funcion con directiva click -->
+  <button type="button" (click)="cambiarEstado(false)">Mostrar Empleado Recomendado</button>
+  <h3>Empleado estrella</h3>
+  <ul>
+    <li>Nombre: {{ empleado.nombre }}</li>
+    <li>Edad: {{ empleado.edad }}</li>
+    <li *ngIf="empleado.edad>=18">Mayor de edad</li>
+    <li *ngIf="empleado.edad<18">Menor de edad</li>
+    <li>Cargo: {{ empleado.cargo }}</li>
+    <li *ngIf="empleado.contratado">Esta contratado</li>
+    <li *ngIf="!empleado.contratado">No esta contratado</li>
+  </ul>
+</div>
+
+<!-- Datos empleado recomendado -->
+<div *ngIf="!show_estrella">
+  <!-- Adicionar un boton que ejecuta una funcion con directiva click -->
+  <button type="button" (click)="cambiarEstado(true)">Mostrar Empleado Estrella</button>
+  <h3>Empleado recomendado</h3>
+  <ul>
+    <li>Nombre: {{ trabajadores[2].nombre }}</li>
+    <li>Edad: {{ trabajadores[2].edad }}</li>
+    <li *ngIf="trabajadores[2].edad>=18">Mayor de edad</li>
+    <li *ngIf="trabajadores[2].edad<18">Menor de edad</li>
+    <li>Cargo: {{ trabajadores[2].cargo }}</li>
+    <li *ngIf="trabajadores[2].contratado">Esta contratado</li>
+    <li *ngIf="!trabajadores[2].contratado">No esta contratado</li>
+  </ul>
+</div>

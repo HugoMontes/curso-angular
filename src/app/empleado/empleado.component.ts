@@ -17,6 +17,9 @@ export class EmpleadoComponent {
   public empleado:Empleado;
   // Declarar una propiedad de tipo Array
   public trabajadores:Array<Empleado>;
+  // Declarar una propiedad de tipo boolean
+  public show_estrella:boolean;
+
   // Definir un constructor
   constructor(){
     // Instanciar un Empleado
@@ -27,6 +30,8 @@ export class EmpleadoComponent {
       new Empleado('Ana Lopez', 25, 'Secretaria', true),
       new Empleado('Ivan Robles', 30, 'Programador', false)
     ];
+    // Inicializar en false
+    this.show_estrella=false;
   }
   // Definir el metodo inicial
   ngOnInit(){
@@ -34,5 +39,9 @@ export class EmpleadoComponent {
     console.log(this.empleado);
     // Mostrar por consola el array de empleados
     console.log(this.trabajadores);
+  }
+  // Definir una funcion que cambia el estado de show_estrella
+  cambiarEstado(valor){
+    this.show_estrella=valor;
   }
 }
