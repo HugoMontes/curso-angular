@@ -19,6 +19,8 @@ export class EmpleadoComponent {
   public trabajadores:Array<Empleado>;
   // Declarar una propiedad de tipo boolean
   public show_estrella:boolean;
+  // Declarar una propiedad de tipo string
+  public color:string;
 
   // Definir un constructor
   constructor(){
@@ -32,6 +34,8 @@ export class EmpleadoComponent {
     ];
     // Inicializar en false
     this.show_estrella=false;
+    // Inicializar color en rojo
+    this.color='red'; // 'yellow', 'green'
   }
   // Definir el metodo inicial
   ngOnInit(){

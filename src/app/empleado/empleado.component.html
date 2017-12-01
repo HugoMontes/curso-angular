@@ -30,3 +30,36 @@
     <li *ngIf="!trabajadores[2].contratado">No esta contratado</li>
   </ul>
 </div>
+<hr/>
+<h3>Listado de empleados</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Indice</th>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Cargo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleado of trabajadores; let i=index">
+      <td>{{ i }}</td>
+      <td>{{ empleado.nombre }}</td>
+      <td>{{ empleado.edad }}</td>
+      <td>{{ empleado.cargo }}</td>
+    </tr>
+  </tbody>
+</table>
+<hr/>
+<h3>Directiva ngSwitch</h3>
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'red'" [ngStyle]="{'background':color, 'padding':'12px', 'color':'white'}">
+    Es de color rojo
+  </p>
+  <p *ngSwitchCase="'yellow'" [ngStyle]="{'background':color, 'padding':'12px', 'color':'white'}">
+    Es de color Amarrillo
+  </p>
+  <p *ngSwitchCase="'green'" [ngStyle]="{'background':color, 'padding':'12px', 'color':'white'}">
+    Es de color Verde
+  </p>
+</div>
