@@ -9,6 +9,9 @@ import { FrutaComponent } from './fruta/fruta.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 // Importar el componente  PersonaComponent
 import { PersonaComponent } from './persona/persona.component';
+// Importar el modulo FormsModule
+import { FormsModule } from '@angular/forms';
+
 // Crear un  modulo
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { PersonaComponent } from './persona/persona.component';
   ],
   // Cargar modulos del framework y otros
   imports: [
-    BrowserModule
+    BrowserModule,
+    // Declarar FormsModule
+    FormsModule,
   ],
   // Cargar servicios
   providers: [],

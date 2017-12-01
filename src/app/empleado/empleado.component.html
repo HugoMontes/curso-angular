@@ -63,3 +63,20 @@
     Es de color Verde
   </p>
 </div>
+<hr/>
+<h3>Selector de colores</h3>
+<!-- Directiva ngModel: Indica que propiedad se va modificar del componente -->
+<input type="text" [(ngModel)]="color_seleccionado"/>
+<!-- Mostrar los datos ingresados -->
+<p
+  [style.border]="color_seleccionado=='red'?'5px solid black':'1px solid green'"
+  [ngClass]="{
+      fondoAzul: color_seleccionado=='blue',
+      fondoVerde: color_seleccionado=='green'
+  }">
+  <strong>Color seleccionado: </strong>{{ color_seleccionado}}
+</p>
+<!-- Definir un cuadrado con el color seleccionado -->
+<div [ngStyle]="{'background':color_seleccionado, 'width':'200px', 'height':'200px'}"></div>
+<!-- Boton que muestra el valor del color_seleccionado en consola -->
+<button type="button" (click)="logColorSeleccionado()">Mostrar LOG</button>

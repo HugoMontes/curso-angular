@@ -21,6 +21,8 @@ export class EmpleadoComponent {
   public show_estrella:boolean;
   // Declarar una propiedad de tipo string
   public color:string;
+  // Declarar una propiedad de tipo string
+  public color_seleccionado:string;
 
   // Definir un constructor
   constructor(){
@@ -36,6 +38,8 @@ export class EmpleadoComponent {
     this.show_estrella=false;
     // Inicializar color en rojo
     this.color='red'; // 'yellow', 'green'
+    // Inicializar color_seleccionado en gris
+    this.color_seleccionado='#CCC';
   }
   // Definir el metodo inicial
   ngOnInit(){
@@ -47,5 +51,10 @@ export class EmpleadoComponent {
   // Definir una funcion que cambia el estado de show_estrella
   cambiarEstado(valor){
     this.show_estrella=valor;
+  }
+  // Definir una funcion que muestre el color_seleccionado por consola
+  // para ser ejecutado por un boton en la vista
+  logColorSeleccionado(){
+    console.log('Color seleccionado: '+this.color_seleccionado);
   }
 }
