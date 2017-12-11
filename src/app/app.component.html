@@ -5,11 +5,19 @@
   </h1>
 </div>
 <hr/>
+<nav>
+  <a [routerLink]="['/pagina-principal']">Home</a>
+  <a [routerLink]="['/fruta']">Fruta</a>
+  <a [routerLink]="['/empleado']">Empleado</a>
+  <a [routerLink]="['/contacto']">Contacto</a>
+</nav>
 <!-- Hacer uso de la etiqueta del componente FrutaComponent -->
 <!-- fruta></fruta>
 <hr/>
 <Hacer uso de la etiqueta del componente EmpleadoComponent -->
-<empleado-tag></empleado-tag>
+<!--empleado-tag></empleado-tag-->
 <!-- Hacer uso de la etiqueta del componente PersonaComponent -->
 <!-- hr/>
 <persona-tag></persona-tag -->
+<!-- Dentro de router-outlet se carga el componente de la url solicitada -->
+<router-outlet></router-outlet>

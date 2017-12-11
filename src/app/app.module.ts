@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+// Importar el routing
+import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
 // Importar el componente FrutaComponent
@@ -11,6 +12,9 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { PersonaComponent } from './persona/persona.component';
 // Importar el modulo FormsModule
 import { FormsModule } from '@angular/forms';
+// Importar los componentes de Home y Contacto
+import { HomeComponent } from './home/home.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 // Crear un  modulo
 @NgModule({
@@ -22,15 +26,23 @@ import { FormsModule } from '@angular/forms';
     EmpleadoComponent,
     // Declarar el componente PersonaComponent
     PersonaComponent,
+    // Cargar los componentes Home y Contacto
+    HomeComponent,
+    ContactoComponent,
   ],
   // Cargar modulos del framework y otros
   imports: [
     BrowserModule,
     // Declarar FormsModule
     FormsModule,
+    // Cargar el modulo de rutas
+    routing,
   ],
   // Cargar servicios
-  providers: [],
+  providers: [
+    // Cargar el servicio para lanzar las rutas
+    appRoutingProviders,
+  ],
   // Indicar el componente principal/inicial
   bootstrap: [AppComponent]
 })
