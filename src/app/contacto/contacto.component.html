@@ -1,1 +1,11 @@
 <h2>{{ titulo }}</h2>
+<div *ngIf="parametro">
+    <p>Hola {{ parametro }}</p>
+</div>
+<!-- Mostrar botones si no existe parametro -->
+<div *ngIf="!parametro">
+  <!-- Crear un boton que llame al metodo redirigir() -->
+  <button (click)="redirigir()">Ir a pagina con parametro</button>
+  <!-- Crear un boton que llame al metodo redirigir2() -->
+  <button (click)="redirigir2()">Ir a la home</button>
+</div>

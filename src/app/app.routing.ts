@@ -20,6 +20,8 @@ const appRoutes: Routes = [
   // Definir la ruta para home y contacto
   {path: 'pagina-principal', component: HomeComponent},
   {path: 'contacto', component: ContactoComponent},
+  // Definir una ruta con paso de parametro
+  {path: 'contacto/:nombre', component: ContactoComponent},
   // Definir la ruta para el error 404
   {path: '**', component: EmpleadoComponent},
 ];
