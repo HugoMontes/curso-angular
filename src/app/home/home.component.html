@@ -1,1 +1,13 @@
 <h2>{{ titulo }}</h2>
+<br/>
+<!-- hacer uso del databinding ngModel -->
+<input type="text" [(ngModel)]="producto_nuevo">
+<button (click)="guardarProducto()">Adicionar Producto</button>
+<p *ngIf="producto_nuevo">El producto a guardar es <strong>{{ producto_nuevo}}</strong></p>
+<h3>Listado de Productos</h3>
+<ul>
+  <li *ngFor="let producto of listado_productos; let i= index">
+    {{ producto }}
+    <button (click)="eliminarProducto(i)">Eliminar</button>
+  </li>
+</ul>
