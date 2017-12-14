@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
 // Importar los componentes de Home y Contacto
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
-
+// Importar el ConversorPipe
+import { ConversorPipe } from './pipes/conversor.pipe';
 // Crear un  modulo
 @NgModule({
   declarations: [
@@ -29,6 +30,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     // Cargar los componentes Home y Contacto
     HomeComponent,
     ContactoComponent,
+    // Cargar el conversor Pipe
+    ConversorPipe
   ],
   // Cargar modulos del framework y otros
   imports: [

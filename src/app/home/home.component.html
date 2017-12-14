@@ -1,10 +1,22 @@
 <h2>{{ titulo }}</h2>
-<br/>
+<h3>Pipes/Filtros</h3>
+<p>Fecha sin filtro: {{ fecha }}</p>
+<!-- Hacer uso del pipe/tuberia para formato de fecha -->
+<p>Fecha completa: {{ fecha | date:'fullDate'}}</p>
+<p>Fecha completa: {{ fecha | date:'dd/MM/yyyy'}}</p>
+<!-- Hacer uso del pipe/tuberia para mayusculas -->
+<p>Fecha mayuscula: {{ fecha | date:'fullDate' | uppercase }}</p>
+<!-- Hacer uso del pipe/tuberia para minuscula -->
+<p>Fecha mayuscula: {{ fecha | date:'fullDate' | lowercase }}</p>
+<hr/>
+<h3>Pipe Conversor</h3>
+{{ 3 | conversor: 5}}
+<hr/>
 <!-- hacer uso del databinding ngModel -->
+<h3>Listado de Productos</h3>
 <input type="text" [(ngModel)]="producto_nuevo">
 <button (click)="guardarProducto()">Adicionar Producto</button>
 <p *ngIf="producto_nuevo">El producto a guardar es <strong>{{ producto_nuevo}}</strong></p>
-<h3>Listado de Productos</h3>
 <ul>
   <li *ngFor="let producto of listado_productos; let i= index">
     {{ producto }}

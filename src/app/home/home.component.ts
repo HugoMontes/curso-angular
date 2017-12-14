@@ -16,11 +16,16 @@ export class HomeComponent{
   public listado_productos:Array<string>;
   // Adicionar atributo de producto a guardar
   public producto_nuevo:string;
+  // Adicionar una propiedad fecha;
+  public fecha;
 
   // Crear una propiedad en el constructor para poder usar el servicio
   constructor(
     private _productoService: ProductoService
-  ){}
+  ){
+    // Inicializar la fecha en 1/enero/2018
+    this.fecha=new Date(2018,0,20);
+  }
   // Funcion inicial
   ngOnInit(){
     // Llamar a las funciones de prueba del servicio
