@@ -8,6 +8,8 @@ import  { FrutaComponent } from './fruta/fruta.component';
 // Importar los componentes de Home y Contacto
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
+// Importar el componente CocheComponent
+import { CocheComponent } from './coche/coche.component';
 
 // Definir una constante que contiene un array de objetos json con las rutas asociadas a un componente
 const appRoutes: Routes = [
@@ -22,6 +24,8 @@ const appRoutes: Routes = [
   {path: 'contacto', component: ContactoComponent},
   // Definir una ruta con paso de parametro
   {path: 'contacto/:nombre', component: ContactoComponent},
+  // Definir la ruta para coche
+  {path: 'coche', component: CocheComponent},
   // Definir la ruta para el error 404
   {path: '**', component: EmpleadoComponent},
 ];

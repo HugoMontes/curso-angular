@@ -17,6 +17,9 @@ import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
 // Importar el ConversorPipe
 import { ConversorPipe } from './pipes/conversor.pipe';
+// Importar el componente CocheComponent
+import { CocheComponent } from './coche/coche.component';
+
 // Crear un  modulo
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { ConversorPipe } from './pipes/conversor.pipe';
     HomeComponent,
     ContactoComponent,
     // Cargar el conversor Pipe
-    ConversorPipe
+    ConversorPipe,
+    // Cargar el componente CocheComponent
+    CocheComponent
   ],
   // Cargar modulos del framework y otros
   imports: [
