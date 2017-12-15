@@ -1,22 +1,58 @@
 <h1>Componente de Coche</h1>
 <!-- Para definir un nombre se usa # -->
 <!-- Capturar el evento submit con el metodo onSubmit() -->
-<form #formCoche="ngForm" (ngSubmit)="onSubmit()">
+<!-- Adicionar el metodo reset() para limpiar el formulario una vez enviado los datos -->
+<form #formCoche="ngForm" (ngSubmit)="onSubmit(); formCoche.reset();">
   <p>
     <label>Marca:</label>
     <!-- Para vincular el objeto coche del componente con el formulario es necesario agregar:
          #marca: vincula con la propiedad del objeto
          [(ngModel)]: permite modificar la propiedad del objeto -->
-
     <input type="text" name="marca" #marca="ngModel" [(ngModel)]="coche.marca" required>
+    <!-- Agregar mensaje de validacion -->
+    <!-- En caso que el usuario haya ingresado algun valor y luego lo haya borrado. -->
+    <span *ngIf="marca.touched && !marca.valid">
+      La marca del coche es incorrecto!!
+    </span>
   </p>
   <p>
     <label>Precio:</label>
-    <input type="text" name="precio" #precio="ngModel" [(ngModel)]="coche.precio" required>
+    <!-- Adicionar una expresion regular "pattern" para ingresar unicamente digitos del 0 al 9,
+         un punto y que se repita mas de una vez -->
+    <input type="text" name="precio" #precio="ngModel" [(ngModel)]="coche.precio" required pattern="[0-9.]+">
+    <span *ngIf="precio.touched && !precio.valid">
+      El precio es incorrecto!!
+    </span>
   </p>
   <p>
     <label>Color:</label>
-    <input type="text" name="color" #color="ngModel" [(ngModel)]="coche.color" required>
+    <!-- Adicionar una expresion regular "pattern" para ingresar unicamente letras de la A a la F,
+         el hastag y que se repita indefinidamente -->
+    <input type="text" name="color" #color="ngModel" [(ngModel)]="coche.color" required pattern="[#a-fA-F0-9]+">
+    <span *ngIf="color.touched && !color.valid">
+      El color es incorrecto!!
+    </span>
   </p>
-  <input type="submit" value="Guardar">
+  <!-- Desactivar el boton cuando el formulario no sea valido -->
+  <input type="submit" value="Guardar" [disabled]="!formCoche.form.valid">
 </form>
+<!-- Mostrar listado de coches -->
+<div>
+  <h3>LISTADO DE COCHES</h3>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>MARCA</th>
+        <th>PRECIO</th>
+        <th>COLOR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let coche of coches">
+        <td>{{ coche.marca }}</td>
+        <td>{{ coche.precio }}</td>
+        <td>{{ coche.color }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
