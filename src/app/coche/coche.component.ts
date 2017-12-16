@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 // Importar el modelo de Coche
 import { Coche } from './coche';
+// Importar el servicio PeticionService
+import {PeticionService} from '../services/peticion.service';
+
 @Component({
   selector: 'app-coche',
-  templateUrl: './coche.component.html'
+  templateUrl: './coche.component.html',
+  // Cargar el servicio el los providers del componente
+  providers: [PeticionService]
 })
 export class CocheComponent{
   // Definir una propiedad coche
@@ -12,7 +17,10 @@ export class CocheComponent{
   public coches:Array<Coche>;
 
   // Definir un constructor
-  constructor(){
+  constructor(
+    // Definir una propiedad/atributo privado
+    private _peticionService:PeticionService
+  ){
     this.coche = new Coche('',0,'');
     // Inicializar el array de coches
     this.coches=[
@@ -21,6 +29,13 @@ export class CocheComponent{
       new Coche('BMW',28000,'#f00')
     ];
   }
+
+  // Definir el metodo ngOnInit
+  ngOnInit(){
+    // Mostrar el mensaje devuelto por el servicio
+    console.log(this._peticionService.getPrueba());
+  }
+
   // Definir el metodo onSubmit
   onSubmit(){
     // Para probar mostrar los datos enviados
