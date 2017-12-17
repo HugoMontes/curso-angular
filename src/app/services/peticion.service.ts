@@ -9,8 +9,26 @@ import {Observable} from 'rxjs/Observable';
 // Definir la clase para el servicio
 @Injectable()
 export class PeticionService{
+
+  // Definir una propiedad de tipo string que contendra la url
+  public url:string;
+	// Definir en el constructor la propiedad http
+  constructor(private _http:Http){
+    // Inicializar la propiedad con la url de prueba
+    this.url='https://jsonplaceholder.typicode.com/posts';
+  }
+
   // Definir un metodo de prueba
   getPrueba(){
     return 'Hola mundo desde PeticionService';
   }
+
+  // Definir un metodo para realizar una peticion HTTP por GET
+  getArticulos(){
+    // Para hacer una peticion HTTP devolver la respuesta del metodo get
+    // Para capturar y recoger la respuesta ejecutar el metodo map
+    // Con una funcion flecha convertir la respuesta a objeto json
+    return this._http.get(this.url).map(res => res.json());
+  }
+
 }

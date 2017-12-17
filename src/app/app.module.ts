@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // Importar el routing
 import { routing, appRoutingProviders } from './app.routing';
+// Importar modulo HttpModule
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 // Importar el componente FrutaComponent
@@ -45,6 +47,8 @@ import { CocheComponent } from './coche/coche.component';
     FormsModule,
     // Cargar el modulo de rutas
     routing,
+    // Cargar HttpModule
+    HttpModule
   ],
   // Cargar servicios
   providers: [

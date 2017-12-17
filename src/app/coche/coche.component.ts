@@ -15,6 +15,8 @@ export class CocheComponent{
   public coche:Coche;
   // Definir un array de objetos coche
   public coches:Array<Coche>;
+  // Definir la propiedad que contendra todos los articulos
+  public articulos;
 
   // Definir un constructor
   constructor(
@@ -34,6 +36,26 @@ export class CocheComponent{
   ngOnInit(){
     // Mostrar el mensaje devuelto por el servicio
     console.log(this._peticionService.getPrueba());
+    // Capturar la respuesta del servicio mediante el metodo subscribe()
+    this._peticionService.getArticulos().subscribe(
+      // funcion result: captura el resultado
+      result => {
+        // Mostrar el resultado en consola
+        console.log(result);
+        // Asignar el resultado a articulos
+        this.articulos=result;
+        // Verificar que no falle respuesta articulos
+        if(!this.articulos){
+          console.log('Error en el servidor');
+        }
+      },
+      // funcion error: captura el error
+      error => {
+        // Mostrar el error en consola
+        var errorMessage=<any>error;
+        console.log(errorMessage);
+      }
+    );
   }
 
   // Definir el metodo onSubmit

@@ -56,3 +56,25 @@
     </tbody>
   </table>
 </div>
+
+<h3>LISTADO DE ARTICULOS</h3>
+<!-- Mostrar articulos si es que ya esta cargado -->
+<table border="1" *ngIf="articulos">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>TITULO</th>
+      <th>CONTENIDO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let articulo of articulos">
+      <td>{{ articulo.id }}</td>
+      <td>{{ articulo.title }}</td>
+      <td>{{ articulo.body }}</td>
+    </tr>
+  </tbody>
+</table>
+<!-- Mostrar mensaje si se esta cargando articulos -->
+<p *ngIf="!articulos">Cargando articulos...</p>
+<!-- El mensaje se muestra mientras se carga el listado -->
