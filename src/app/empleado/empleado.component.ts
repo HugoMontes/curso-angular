@@ -52,9 +52,4 @@ export class EmpleadoComponent {
   cambiarEstado(valor){
     this.show_estrella=valor;
   }
-  // Definir una funcion que muestre el color_seleccionado por consola
-  // para ser ejecutado por un boton en la vista
-  logColorSeleccionado(){
-    console.log('Color seleccionado: '+this.color_seleccionado);
-  }
 }
